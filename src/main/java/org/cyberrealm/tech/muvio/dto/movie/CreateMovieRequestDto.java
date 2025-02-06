@@ -1,4 +1,4 @@
-package org.cyberrealm.tech.muvio.dto;
+package org.cyberrealm.tech.muvio.dto.movie;
 
 import java.time.LocalDate;
 import java.util.Set;
