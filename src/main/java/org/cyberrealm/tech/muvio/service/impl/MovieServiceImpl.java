@@ -2,10 +2,10 @@ package org.cyberrealm.tech.muvio.service.impl;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.cyberrealm.tech.muvio.dto.CreateMovieRequestDto;
-import org.cyberrealm.tech.muvio.dto.MovieDto;
-import org.cyberrealm.tech.muvio.dto.MovieSearchParameters;
-import org.cyberrealm.tech.muvio.dto.UpdateMovieRequestDto;
+import org.cyberrealm.tech.muvio.dto.movie.CreateMovieRequestDto;
+import org.cyberrealm.tech.muvio.dto.movie.MovieDto;
+import org.cyberrealm.tech.muvio.dto.movie.MovieSearchParameters;
+import org.cyberrealm.tech.muvio.dto.movie.UpdateMovieRequestDto;
 import org.cyberrealm.tech.muvio.exception.EntityNotFoundException;
 import org.cyberrealm.tech.muvio.mapper.MovieMapper;
 import org.cyberrealm.tech.muvio.model.Movie;
