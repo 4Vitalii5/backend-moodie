@@ -8,8 +8,8 @@ import org.cyberrealm.tech.muvio.dto.movie.MovieSearchParameters;
 import org.cyberrealm.tech.muvio.dto.movie.UpdateMovieRequestDto;
 import org.cyberrealm.tech.muvio.exception.EntityNotFoundException;
 import org.cyberrealm.tech.muvio.mapper.MovieMapper;
-import org.cyberrealm.tech.muvio.model.Movie;
-import org.cyberrealm.tech.muvio.repository.movies.MovieRepository;
+import org.cyberrealm.tech.muvio.model.MovieEntity;
+import org.cyberrealm.tech.muvio.repository.MovieRepository;
 import org.cyberrealm.tech.muvio.service.MovieService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -30,7 +30,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public MovieDto save(CreateMovieRequestDto requestDto) {
-        Movie movie = movieMapper.toMovie(requestDto);
+        MovieEntity movie = movieMapper.toMovie(requestDto);
         movieRepository.save(movie);
         return movieMapper.toDto(movie);
     }
@@ -42,7 +42,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public MovieDto updateMovieById(String id, UpdateMovieRequestDto requestDto) {
-        Movie movie = getMovieById(id);
+        MovieEntity movie = getMovieById(id);
         movieMapper.updateMovieFromDto(requestDto, movie);
         movieRepository.save(movie);
         return movieMapper.toDto(movie);
@@ -58,7 +58,7 @@ public class MovieServiceImpl implements MovieService {
         return List.of();
     }
 
-    private Movie getMovieById(String id) {
+    private MovieEntity getMovieById(String id) {
         return movieRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Can't find movie by id:" + id)
         );
