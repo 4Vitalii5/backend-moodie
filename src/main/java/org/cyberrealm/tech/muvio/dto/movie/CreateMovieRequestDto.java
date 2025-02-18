@@ -2,11 +2,11 @@ package org.cyberrealm.tech.muvio.dto.movie;
 
 import java.time.LocalDate;
 import java.util.Set;
-import org.cyberrealm.tech.muvio.model.Genre;
+import org.cyberrealm.tech.muvio.model.GenreEntity;
 
 public record CreateMovieRequestDto(
         String title,
-        Set<Genre> genres,
+        Set<GenreEntity> genres,
         String overview,
         Double voteAverage,
         String posterPath,
