@@ -19,3 +19,4 @@ jobs:
         env:
           MONGO_URL: ${{ secrets.MONGO_URL }}
           TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
+          MONGO_LOCAL_URL: ${{ secrets.MONGO_LOCAL_URL }}
