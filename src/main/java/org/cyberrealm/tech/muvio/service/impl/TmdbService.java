@@ -34,12 +34,11 @@ import org.cyberrealm.tech.muvio.repository.GenreRepository;
 import org.cyberrealm.tech.muvio.repository.MovieRepository;
 import org.cyberrealm.tech.muvio.repository.PhotoRepository;
 import org.cyberrealm.tech.muvio.repository.ReviewRepository;
-import org.cyberrealm.tech.muvio.service.TmdbService;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class TmdbServiceImpl implements TmdbService {
+public class TmdbService {
     public static final String EN = "en";
     public static final String UKRAINE = "UA";
     public static final int PAGE = 1;
@@ -68,7 +67,6 @@ public class TmdbServiceImpl implements TmdbService {
         loadPopularMoviesIntoRepository();
     }
 
-    @Override
     public void loadGenresIntoRepository() {
         List<Genre> tmdbGenres;
         try {
@@ -84,7 +82,6 @@ public class TmdbServiceImpl implements TmdbService {
         }
     }
 
-    @Override
     public void loadPopularMoviesIntoRepository() {
         List<Movie> allMovies = new ArrayList<>();
         try {
@@ -131,7 +128,6 @@ public class TmdbServiceImpl implements TmdbService {
                 .orElse(null);
     }
 
-    @Override
     public Set<Actor> getActors(int movieId) {
         List<Cast> castList;
         try {
@@ -146,7 +142,6 @@ public class TmdbServiceImpl implements TmdbService {
                 .collect(Collectors.toSet());
     }
 
-    @Override
     public Set<Photo> getPhotos(int movieId) {
         List<Artwork> posters;
         try {
@@ -161,7 +156,6 @@ public class TmdbServiceImpl implements TmdbService {
                 .collect(Collectors.toSet());
     }
 
-    @Override
     public Set<Review> getReviews(int movieId) {
         List<info.movito.themoviedbapi.model.core.Review> reviews;
         try {
@@ -175,7 +169,6 @@ public class TmdbServiceImpl implements TmdbService {
                 .collect(Collectors.toSet());
     }
 
-    @Override
     public Director getDirector(int movieId) {
         List<Crew> crewList;
         try {
