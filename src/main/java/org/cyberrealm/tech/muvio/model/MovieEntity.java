@@ -1,36 +1,26 @@
 package org.cyberrealm.tech.muvio.model;
 
-import jakarta.persistence.Id;
-import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Getter
 @Setter
 @Document("movies")
 public class MovieEntity {
-    @Id
+    @MongoId
     private String id;
     private String title;
+    private String releaseDate;
     @DBRef
     private Set<GenreEntity> genres = new HashSet<>();
-    @DBRef
-    private Set<Actor> actors = new HashSet<>();
-    @DBRef
-    private Set<Photo> photos = new HashSet<>();
-    @DBRef
-    private Set<Review> reviews = new HashSet<>();
-    @DBRef
-    private Director director;
-    private String trailerPath;
-    private String overview;
-    private Double voteAverage;
     private String posterPath;
-    private String releaseDate;
-    private BigDecimal popularity;
-    private Integer voteCount;
+    private Double voteAverage;
+    private Integer duration;
+    @DBRef
+    private MovieDetails movieDetails;
 }
