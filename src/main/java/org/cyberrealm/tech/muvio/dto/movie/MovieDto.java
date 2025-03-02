@@ -4,14 +4,14 @@ import java.time.LocalDate;
 import java.util.Set;
 import org.cyberrealm.tech.muvio.model.Actor;
 import org.cyberrealm.tech.muvio.model.Director;
-import org.cyberrealm.tech.muvio.model.GenreEntity;
+import org.cyberrealm.tech.muvio.model.MovieGenre;
 import org.cyberrealm.tech.muvio.model.Photo;
 import org.cyberrealm.tech.muvio.model.Review;
 
 public record MovieDto(
         String id,
         String title,
-        Set<GenreEntity> genres,
+        Set<MovieGenre> genres,
         Set<Actor> actors,
         Set<Photo> photos,
         Set<Review> reviews,
