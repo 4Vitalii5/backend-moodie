@@ -6,6 +6,6 @@ import org.cyberrealm.tech.muvio.model.Director;
 import org.mapstruct.Mapper;
 
 @Mapper(config = MapperConfig.class)
-public interface TmdbDirectorMapper {
+public interface DirectorMapper {
     Director toProducer(Crew crew);
 }
