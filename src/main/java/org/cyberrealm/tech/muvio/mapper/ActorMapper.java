@@ -6,6 +6,6 @@ import org.cyberrealm.tech.muvio.model.Actor;
 import org.mapstruct.Mapper;
 
 @Mapper(config = MapperConfig.class)
-public interface TmdbActorMapper {
+public interface ActorMapper {
     Actor toActor(Cast cast);
 }
