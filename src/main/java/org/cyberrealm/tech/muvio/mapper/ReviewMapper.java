@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(config = MapperConfig.class)
-public interface TmdbReviewMapper {
+public interface ReviewMapper {
     @Mapping(source = "authorDetails.avatarPath", target = "avatarPath")
     @Mapping(source = "authorDetails.rating", target = "rating")
     Review toReview(info.movito.themoviedbapi.model.core.Review review);
