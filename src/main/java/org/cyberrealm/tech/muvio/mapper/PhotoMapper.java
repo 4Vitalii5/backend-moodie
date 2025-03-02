@@ -6,6 +6,6 @@ import org.cyberrealm.tech.muvio.model.Photo;
 import org.mapstruct.Mapper;
 
 @Mapper(config = MapperConfig.class)
-public interface TmdbPhotoMapper {
+public interface PhotoMapper {
     Photo toPhoto(Artwork artwork);
 }
